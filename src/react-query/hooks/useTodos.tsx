@@ -17,9 +17,8 @@ const useTodos = () => {
   return useQuery<Todo[], Error>({
     queryKey: ["todos"],
     queryFn: fetchTodos,
-    staleTime: 10 * 1000 //10 sec
-})
-}
-
+    staleTime: 10 * 1000, //10 sec (  In React Query, "stale time" refers to the amount of time after which cached data is considered outdated and potentially needs to be refreshed.)
+  });
+};
 
 export default useTodos;
