@@ -15,21 +15,22 @@ const TodoForm = () => {
         className="row mb-3"
         onSubmit={(event) => {
           event.preventDefault();
-          if (ref.current && ref.current.value)
+          if (ref.current && ref.current.value) {
             addTodo.mutate({
               id: 0,
               title: ref.current?.value,
               userId: 1,
               completed: false,
             });
+          }
         }}
       >
         <div className="col">
           <input ref={ref} type="text" className="form-control" />
         </div>
         <div className="col">
-          <button className="btn btn-primary" disabled={addTodo.isLoading}>
-            {addTodo.isLoading ? "Loading..." : "Add"}
+          <button className="btn btn-primary" >
+            {"Add"}
           </button>
         </div>
       </form>
