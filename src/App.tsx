@@ -1,9 +1,10 @@
-import Counter from "./state-management/Counter";
+// import Counter from "./state-management/Counter";
+import TaskList from "./state-management/TaskList";
 
 const App = () => {
   return (
     <div>
-      <Counter />
+      <TaskList />
     </div>
   );
 };
