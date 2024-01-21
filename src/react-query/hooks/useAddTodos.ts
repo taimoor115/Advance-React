@@ -27,11 +27,10 @@ const useAddTodos = (onAdd: () => void) => {
         todos?.map((todo) => (todo === newTodo ? savedTodo : todo))
       );
     },
-    onError: (error, newTodo, context) => {
-      if (!context) return;
-
-      queryClient.setQueryData<Todo[]>(CACHE_KEY_TODOS, context.previousTodos);
-    },
+    // onError: (error, newTodo, context) => {
+    //   if (!context) return;
+    //   queryClient.setQueryData<Todo[]>(CACHE_KEY_TODOS, context.previousTodos);
+    // },
   });
 };
 
