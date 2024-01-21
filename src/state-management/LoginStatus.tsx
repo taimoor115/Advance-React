@@ -3,14 +3,14 @@ import UserContext from "./context/userContext";
 
 const LoginStatus = () => {
   // const [user, setUser] = useState('');
-  const { user, userDispatch } = useContext(UserContext);
+  const { user, dispatch } = useContext(UserContext);
 
   if (user)
     return (
       <>
         <div>
           <span className="mx-2">{user}</span>
-          <a onClick={() => userDispatch({ type: "LOGOUT" })} href="#">
+          <a onClick={() => dispatch({ type: "LOGOUT" })} href="#">
             Logout
           </a>
         </div>
@@ -20,7 +20,7 @@ const LoginStatus = () => {
     <div>
       <a
         onClick={() => {
-          userDispatch({ type: "LOGIN", userName: "Taimoor Hussain" });
+          dispatch({ type: "LOGIN", userName: "Taimoor Hussain" });
         }}
         href="#"
       >

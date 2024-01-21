@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import TasksContext from "./context/tasksContext";
 import UserContext from "./context/userContext";
+import useTasks from "./context/hooks/userTasks";
 
 const TaskList = () => {
   // const [tasks, setTasks] = useState<Task[]>([]);
-  const { tasks, tasksDispatch } = useContext(TasksContext);
+  const { tasks, dispatch } = useTasks();
   const { user } = useContext(UserContext);
   return (
     <>
@@ -14,7 +14,7 @@ const TaskList = () => {
         //   setTasks([{ id: Date.now(), title: "Task " + Date.now() }, ...tasks])
         // }
         onClick={() =>
-          tasksDispatch({
+          dispatch({
             type: "ADD",
             task: { id: Date.now(), title: "Tasks" + Date.now() },
           })
@@ -33,7 +33,7 @@ const TaskList = () => {
             <button
               className="btn btn-outline-danger"
               // onClick={() => setTasks(tasks.filter((t) => t.id !== task.id))}
-              onClick={() => tasksDispatch({ type: "DELETE", taskId: task.id })}
+              onClick={() => dispatch({ type: "DELETE", taskId: task.id })}
             >
               Delete
             </button>

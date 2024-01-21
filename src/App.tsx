@@ -8,9 +8,9 @@ import UserProvider from "./state-management/userProvider";
 // import TaskList from "./state-management/TaskList";
 
 const App = () => {
-  const [tasks, tasksDispatch] = useReducer(tasksReducer, []);
+  const [tasks, dispatch] = useReducer(tasksReducer, []);
   return (
-    <TasksContext.Provider value={{ tasks, tasksDispatch }}>
+    <TasksContext.Provider value={{ tasks, dispatch }}>
       <UserProvider>
         <NavBar />
         <HomePage />
