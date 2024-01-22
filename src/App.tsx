@@ -2,7 +2,6 @@
 
 import HomePage from "./state-management/HomePage";
 import NavBar from "./state-management/NavBar";
-import UserProvider from "./state-management/user/userProvider";
 import { TasksProvider } from "./state-management/Tasks";
 import Counter from "./state-management/counter/Counter";
 // import TaskList from "./state-management/TaskList";
@@ -10,11 +9,9 @@ import Counter from "./state-management/counter/Counter";
 const App = () => {
   return (
     <TasksProvider>
-      <UserProvider>
-        <Counter />
-        <NavBar />
-        <HomePage />
-      </UserProvider>
+      <Counter />
+      <NavBar />
+      <HomePage />
     </TasksProvider>
   );
 };
